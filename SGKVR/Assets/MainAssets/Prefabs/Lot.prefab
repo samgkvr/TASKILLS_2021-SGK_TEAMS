@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0422\u043E\u0440\u0433\u0438"
+  m_text: "\u0421\u0442\u0430\u0432\u043A\u0438"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -451,6 +451,7 @@ MonoBehaviour:
   ID: 0
   Name: 
   Description: 
+  Cost: 0
   RightPanel: {fileID: 5452099009547140612}
 --- !u!1 &1709589218443457967
 GameObject:
