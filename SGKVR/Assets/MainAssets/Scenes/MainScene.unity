@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.59937525, g: 0.5997512, b: 0.59948856, a: 1}
+  m_IndirectSpecularColor: {r: 0.6080321, g: 0.6088709, b: 0.60827845, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -253,6 +253,55 @@ Transform:
   m_Father: {fileID: 1341991614}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &369169577
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 369169578}
+  - component: {fileID: 369169579}
+  m_Layer: 0
+  m_Name: Light Probe Group
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &369169578
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369169577}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.613934, y: -0.8161793, z: -9.79357}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1341991614}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!220 &369169579
+LightProbeGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369169577}
+  m_Enabled: 1
+  m_SourcePositions:
+  - {x: 6.8031497, y: 5.660917, z: 12.758724}
+  - {x: 6.781044, y: 5.484347, z: -13.975536}
+  - {x: 6.9092674, y: -5.6276636, z: 12.908993}
+  - {x: 6.7416973, y: -5.383483, z: -14.030977}
+  - {x: -9.035956, y: 5.5024676, z: 12.658497}
+  - {x: -9.046764, y: 5.1325183, z: -14.1793375}
+  - {x: -8.745843, y: -5.32635, z: 12.632046}
+  - {x: -8.433583, y: -3.9665518, z: -13.89224}
+  m_Dering: 1
 --- !u!1 &577042391
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,7 +318,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &577042392
 Transform:
   m_ObjectHideFlags: 0
@@ -626,6 +675,7 @@ Transform:
   - {fileID: 1915778857}
   - {fileID: 1524857434}
   - {fileID: 1793512251}
+  - {fileID: 369169578}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -683,7 +733,7 @@ Light:
     m_CustomResolution: -1
     m_Strength: 1
     m_Bias: 0.05
-    m_NormalBias: 0.4
+    m_NormalBias: 0.47
     m_NearPlane: 0.2
     m_CullingMatrixOverride:
       e00: 1
