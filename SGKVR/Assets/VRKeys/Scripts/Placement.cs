@@ -82,13 +82,13 @@ namespace VRKeys {
 			bool rightGrip = false;
 			bool changed = false;
 
-			if (leftMallet.Controller () != null) {
-				leftGrip = leftMallet.Controller ().OnGrip ();
-			}
+			//if (leftMallet.Controller () != null) {
+			//	leftGrip = leftMallet.Controller ().OnGrip ();
+			//}
 
-			if (rightMallet.Controller () != null) {
-				rightGrip = rightMallet.Controller ().OnGrip ();
-			}
+			//if (rightMallet.Controller () != null) {
+			//	rightGrip = rightMallet.Controller ().OnGrip ();
+			//}
 
 			// Positioning
 			if (leftGrip && rightGrip) {

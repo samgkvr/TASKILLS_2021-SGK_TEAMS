@@ -9,7 +9,6 @@
  */
 
 using UnityEngine;
-using UnityEngine.XR;
 using UnityEngine.Events;
 using System;
 using System.Collections;
@@ -125,11 +124,17 @@ namespace VRKeys {
 
 		private Layout layout;
 
+		[SerializeField]
+		private GameObject playerLeftHand;
+
+		[SerializeField]
+		private GameObject playerRightHand;
+
 		/// <summary>
 		/// Initialization.
 		/// </summary>
 		private IEnumerator Start () {
-			XRDevice.SetTrackingSpaceType (TrackingSpaceType.RoomScale);
+			//XRDevice.SetTrackingSpaceType (TrackingSpaceType.RoomScale);
 
 			playerSpace = new GameObject ("Play Space");
 			//playerSpace.transform.localPosition = InputTracking.GetLocalPosition (XRNode.TrackingReference);
@@ -154,11 +159,11 @@ namespace VRKeys {
 			//playerSpace.transform.localPosition = InputTracking.GetLocalPosition (XRNode.TrackingReference);
 			//playerSpace.transform.localRotation = InputTracking.GetLocalRotation (XRNode.TrackingReference);
 
-			leftHand.transform.localPosition = InputTracking.GetLocalPosition (XRNode.LeftHand);
-			leftHand.transform.localRotation = InputTracking.GetLocalRotation (XRNode.LeftHand);
+			leftHand.transform.localPosition = playerLeftHand.transform.localPosition;
+			leftHand.transform.localRotation = playerLeftHand.transform.localRotation;
 
-			rightHand.transform.localPosition = InputTracking.GetLocalPosition (XRNode.RightHand);
-			rightHand.transform.localRotation = InputTracking.GetLocalRotation (XRNode.RightHand);
+			rightHand.transform.localPosition = playerRightHand.transform.localPosition;
+			rightHand.transform.localRotation = playerRightHand.transform.localRotation;
 		}
 
 		private void PositionAndAttachMallets () {

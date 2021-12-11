@@ -65,9 +65,9 @@ namespace VRKeys {
 			audioSource.Stop ();
 			audioSource.PlayOneShot (clipToPlay);
 
-			if (transform.parent.transform.parent != null) {
-				controller.TriggerPulse ();
-			}
+			//if (transform.parent.transform.parent != null) {
+			//	controller.TriggerPulse ();
+			//}
 		}
 
 		/// <summary>
