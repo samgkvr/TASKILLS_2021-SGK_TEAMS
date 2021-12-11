@@ -8,7 +8,7 @@ namespace VRKeys {
 	/// <summary>
 	/// Example use of VRKeys keyboard.
 	/// </summary>
-	public class DemoScene : MonoBehaviour {
+	public class MainScene : MonoBehaviour {
 
 		/// <summary>
 		/// Reference to the VRKeys keyboard.
@@ -40,7 +40,7 @@ namespace VRKeys {
 			canvas.worldCamera = cam;
 
 			keyboard.Enable ();
-			keyboard.SetPlaceholderMessage ("Please enter your email address");
+			keyboard.SetPlaceholderMessage ("Пожалуйста, введите ваш Email");
 
 			keyboard.OnUpdate.AddListener (HandleUpdate);
 			keyboard.OnSubmit.AddListener (HandleSubmit);
@@ -96,7 +96,7 @@ namespace VRKeys {
 			keyboard.DisableInput ();
 
 			if (!ValidateEmail (text)) {
-				keyboard.ShowValidationMessage ("Please enter a valid email address");
+				keyboard.ShowValidationMessage ("Пожалуйста, введите действительный Email");
 				keyboard.EnableInput ();
 				return;
 			}
@@ -105,18 +105,18 @@ namespace VRKeys {
 		}
 
 		public void HandleCancel () {
-			Debug.Log ("Cancelled keyboard input!");
+			Debug.Log ("Отменен ввод с клавиатуры!");
 		}
 
 		/// <summary>
 		/// Pretend to submit the email before resetting.
 		/// </summary>
 		private IEnumerator SubmitEmail (string email) {
-			keyboard.ShowInfoMessage ("Sending lots of spam, please wait... ;)");
+			keyboard.ShowInfoMessage ("Код подтверждения отправлен на ваш Email... ;)");
 
 			yield return new WaitForSeconds (2f);
 
-			keyboard.ShowSuccessMessage ("Lots of spam sent to " + email);
+			keyboard.ShowSuccessMessage ("Ваш Email " + email + " подтвержден");
 
 			yield return new WaitForSeconds (2f);
 

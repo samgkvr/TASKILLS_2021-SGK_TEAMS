@@ -5,6 +5,7 @@ public class User : MonoBehaviour
 {
     public int ID;
     public string Nickname;
+    public string Email;
     public string Password;
     public string Description;
     public List<Token> OwnedToken;

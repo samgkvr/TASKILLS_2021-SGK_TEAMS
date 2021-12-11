@@ -1832,6 +1832,13 @@ MonoBehaviour:
   Cost: 0
   UserOwner: []
   UserCreator: {fileID: 0}
+  textName: {fileID: 5383536650031828026}
+  textCost: {fileID: 4010870625596278573}
+  textUserCreator: {fileID: 784123400214515663}
+  textUserOwner: {fileID: 4010870625066837372}
+  textDescription: {fileID: 4065414119993446794}
+  button: {fileID: 0}
+  LeftPanel: {fileID: 7684168935263684724}
   RightPanel: {fileID: 8935360175744166667}
 --- !u!1 &4143867607873970788
 GameObject:
