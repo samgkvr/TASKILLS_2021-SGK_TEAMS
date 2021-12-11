@@ -10,6 +10,7 @@ public class User : MonoBehaviour
     public string Description;
     public List<Token> OwnedToken;
     public List<Token> CreatedToken;
+    public int Money;
 
     public bool ValidPassword(string m_password)
     {
