@@ -8799,6 +8799,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyboard: {fileID: 1134407225}
   camera: {fileID: 1717212381}
+  state1: 0
+  state2: 0
+  state3: 0
   RegPanel: {fileID: 487547199}
 --- !u!4 &1738390340
 Transform:
@@ -9720,7 +9723,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.03
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
