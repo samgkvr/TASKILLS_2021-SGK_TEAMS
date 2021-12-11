@@ -2915,6 +2915,7 @@ MonoBehaviour:
   textUserOwner: {fileID: 4010870625066837372}
   textDescription: {fileID: 4065414119993446794}
   buttonBuy: {fileID: 4010870624489632689}
+  buttonBid: {fileID: 2310583842603212960}
   buttonSell: {fileID: 5410099386450500533}
   LeftPanel: {fileID: 7684168935263684724}
   RightPanel: {fileID: 8935360175744166667}
