@@ -10,7 +10,7 @@ public class Token : MonoBehaviour
     public Item Item;
     public string Name;
     public string Description;
-    public float Cost;
+    public float Cost; //-1 не для продажи
     public User UserOwner;
     public User UserCreator;
 
@@ -31,6 +31,8 @@ public class Token : MonoBehaviour
 
     [SerializeField]
     private GameObject buttonBuy;
+    [SerializeField]
+    private GameObject buttonBid;
     [SerializeField]
     private GameObject buttonSell;
 
@@ -67,7 +69,16 @@ public class Token : MonoBehaviour
     {
         textName.text = Name;
         image.sprite = Item.Image;
-        textCost.text = "Цена: " + Cost.ToString() + " ETH";
+        if (Cost != -1)
+        {
+            textCost.text = "Цена: " + Cost.ToString() + " ETH";
+        }
+        else
+        {
+            textCost.text = "Не для продажи";
+            buttonBid.SetActive(false);
+            OnSale = false;
+        }
         textUserCreator.text = "Создатель: " + UserCreator.Nickname;
         textUserOwner.text = "Владелец: " + UserOwner.Nickname;
         textDescription.text = Description;
@@ -92,9 +103,15 @@ public class Token : MonoBehaviour
             }
             else
             {
-                buttonBuy.SetActive(true);
+                if (Cost != -1)
+                {
+                    buttonBuy.SetActive(true);
+
+                }
             }
         }
+
+
     }
 
     public void LeftPanelToggle()
