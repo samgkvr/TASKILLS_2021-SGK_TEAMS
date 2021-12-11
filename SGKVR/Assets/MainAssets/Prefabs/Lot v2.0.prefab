@@ -1346,8 +1346,8 @@ GameObject:
   - component: {fileID: 3169323562235518220}
   - component: {fileID: 9200580966099164144}
   - component: {fileID: 5828783111101692333}
-  - component: {fileID: 6405736396703810974}
   - component: {fileID: 1524505992410029958}
+  - component: {fileID: 9144984498097855061}
   m_Layer: 0
   m_Name: Bid
   m_TagString: Untagged
@@ -1509,34 +1509,6 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   hoverPriority: 0
---- !u!114 &6405736396703810974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2310583842603212960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c0e35ef0cc211b408d2d7e7eb0f850d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movingPart: {fileID: 0}
-  localMoveDistance: {x: 0, y: -0.1, z: 0}
-  engageAtPercent: 0.95
-  disengageAtPercent: 0.9
-  onButtonDown:
-    m_PersistentCalls:
-      m_Calls: []
-  onButtonUp:
-    m_PersistentCalls:
-      m_Calls: []
-  onButtonIsPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  engaged: 0
-  buttonDown: 0
-  buttonUp: 0
 --- !u!65 &1524505992410029958
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1550,6 +1522,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 446.7, y: 236.49, z: 82.4}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9144984498097855061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2310583842603212960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53cd2ef2dd3d5d64e96af4420220d1d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onHandClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 477059747223066065}
+        m_TargetAssemblyTypeName: Token, Assembly-CSharp
+        m_MethodName: btnBid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2637017992495385563
 GameObject:
   m_ObjectHideFlags: 0
@@ -2116,8 +2115,8 @@ GameObject:
   - component: {fileID: 4010870624489632703}
   - component: {fileID: 4010870624489632702}
   - component: {fileID: 4010870624489632701}
-  - component: {fileID: 4010870624489632700}
   - component: {fileID: 4010870624489632691}
+  - component: {fileID: 8158454586223413880}
   m_Layer: 0
   m_Name: 'Buy '
   m_TagString: Untagged
@@ -2279,34 +2278,6 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   hoverPriority: 0
---- !u!114 &4010870624489632700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4010870624489632689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c0e35ef0cc211b408d2d7e7eb0f850d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movingPart: {fileID: 0}
-  localMoveDistance: {x: 0, y: -0.1, z: 0}
-  engageAtPercent: 0.95
-  disengageAtPercent: 0.9
-  onButtonDown:
-    m_PersistentCalls:
-      m_Calls: []
-  onButtonUp:
-    m_PersistentCalls:
-      m_Calls: []
-  onButtonIsPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  engaged: 0
-  buttonDown: 0
-  buttonUp: 0
 --- !u!65 &4010870624489632691
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2320,6 +2291,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 446.7, y: 236.49, z: 82.4}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8158454586223413880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4010870624489632689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53cd2ef2dd3d5d64e96af4420220d1d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onHandClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 477059747223066065}
+        m_TargetAssemblyTypeName: Token, Assembly-CSharp
+        m_MethodName: bntBuy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4010870625066837362
 GameObject:
   m_ObjectHideFlags: 0
@@ -2735,8 +2733,8 @@ GameObject:
   - component: {fileID: 4010870625604597339}
   - component: {fileID: 4010870625604597338}
   - component: {fileID: 4010870625604597337}
-  - component: {fileID: 4010870625604597336}
   - component: {fileID: 4010870625604597343}
+  - component: {fileID: 9199058964719096742}
   m_Layer: 0
   m_Name: Informathion
   m_TagString: Untagged
@@ -2898,34 +2896,6 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   hoverPriority: 0
---- !u!114 &4010870625604597336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4010870625604597341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c0e35ef0cc211b408d2d7e7eb0f850d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movingPart: {fileID: 0}
-  localMoveDistance: {x: 0, y: -0.1, z: 0}
-  engageAtPercent: 0.95
-  disengageAtPercent: 0.9
-  onButtonDown:
-    m_PersistentCalls:
-      m_Calls: []
-  onButtonUp:
-    m_PersistentCalls:
-      m_Calls: []
-  onButtonIsPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  engaged: 0
-  buttonDown: 0
-  buttonUp: 0
 --- !u!65 &4010870625604597343
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2939,6 +2909,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 446.7, y: 236.49, z: 82.4}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9199058964719096742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4010870625604597341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53cd2ef2dd3d5d64e96af4420220d1d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onHandClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 477059747223066065}
+        m_TargetAssemblyTypeName: Token, Assembly-CSharp
+        m_MethodName: btnInfo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4132449618397662387
 GameObject:
   m_ObjectHideFlags: 0
@@ -2995,7 +2992,7 @@ MonoBehaviour:
   Name: 
   Description: 
   Cost: 0
-  UserOwner: []
+  UserOwner: {fileID: 0}
   UserCreator: {fileID: 0}
   OnSale: 0
   textName: {fileID: 5383536650031828026}
@@ -4528,8 +4525,8 @@ GameObject:
   - component: {fileID: 1508064298731435119}
   - component: {fileID: 848776685024136083}
   - component: {fileID: 2137003317554401383}
-  - component: {fileID: 6553151470203343764}
   - component: {fileID: 1761412805404891804}
+  - component: {fileID: 1144257110518127462}
   m_Layer: 0
   m_Name: Sell
   m_TagString: Untagged
@@ -4691,34 +4688,6 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   hoverPriority: 0
---- !u!114 &6553151470203343764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5410099386450500533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c0e35ef0cc211b408d2d7e7eb0f850d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movingPart: {fileID: 0}
-  localMoveDistance: {x: 0, y: -0.1, z: 0}
-  engageAtPercent: 0.95
-  disengageAtPercent: 0.9
-  onButtonDown:
-    m_PersistentCalls:
-      m_Calls: []
-  onButtonUp:
-    m_PersistentCalls:
-      m_Calls: []
-  onButtonIsPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  engaged: 0
-  buttonDown: 0
-  buttonUp: 0
 --- !u!65 &1761412805404891804
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4732,6 +4701,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 446.7, y: 236.49, z: 82.4}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1144257110518127462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5410099386450500533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53cd2ef2dd3d5d64e96af4420220d1d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onHandClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 477059747223066065}
+        m_TargetAssemblyTypeName: Token, Assembly-CSharp
+        m_MethodName: btnSell
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6229010892791208117
 GameObject:
   m_ObjectHideFlags: 0
@@ -6513,7 +6509,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043F\u0440\u0438\u0431\u0440\u0435\u0441\u0442\u0438 "
+  m_text: "\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043F\u0440\u0438\u043E\u0431\u0440\u0435\u0441\u0442\u0438 "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -9,8 +10,8 @@ public class Token : MonoBehaviour
     public Item Item;
     public string Name;
     public string Description;
-    public int Cost;
-    public List<User> UserOwner;
+    public float Cost;
+    public User UserOwner;
     public User UserCreator;
 
     public bool OnSale;
@@ -32,6 +33,9 @@ public class Token : MonoBehaviour
     private GameObject buttonBuy;
     [SerializeField]
     private GameObject buttonSell;
+
+    //[SerializeField]
+    //private TMP_Text textSellInput;
 
     [SerializeField]
     private GameObject LeftPanel;
@@ -65,39 +69,31 @@ public class Token : MonoBehaviour
         textName.text = Name;
         image.sprite = Item.Image;
         textCost.text = "Цена: " + Cost.ToString() + " ETH";
-        textUserCreator.text = "Создатель: " + UserCreator.name;
-        foreach (User go in UserOwner)
-        {
-            textUserOwner.text = go.Nickname;
-        }
+        textUserCreator.text = "Создатель: " + UserCreator.Nickname;
+        textUserOwner.text = "Владелец: " + UserOwner.Nickname;
         textDescription.text = Description;
 
-        if (OnSale)
+        if (!OnSale)
         {
-            foreach (User go in UserOwner)
+            if (UserOwner == CurrentUser)
             {
-                if (go == CurrentUser)
-                {
-                    buttonBuy.SetActive(false);
-                }
-                else
-                {
-                    buttonBuy.SetActive(false);
-                }
+                buttonBuy.SetActive(false);
+            }
+            else
+            {
+                buttonBuy.SetActive(false);
             }
         }
         else
         {
-            foreach (User go in UserOwner)
+            if (UserOwner == CurrentUser)
             {
-                if (go == CurrentUser)
-                {
-                    buttonBuy.SetActive(false);
-                }
-                else
-                {
-                    buttonBuy.SetActive(true);
-                }
+                buttonBuy.SetActive(false);
+                buttonSell.SetActive(true);
+            }
+            else
+            {
+                buttonBuy.SetActive(true);
             }
         }
     }
@@ -126,15 +122,66 @@ public class Token : MonoBehaviour
         }
     }
 
+    public void SellMenuToggle()
+    {
+        if (SellMenu.activeSelf)
+        {
+            SellMenu.SetActive(false);
+        }
+        else
+        {
+            SellMenu.SetActive(true);
+        }
+    }
+
     public void bntBuy()
     {
-        if (Cost <= CurrentUser.Money)
+        if (Cost <= CurrentUser.Money && CurrentUser != UserOwner)
         {
             CurrentUser.OwnedToken.Add(this);
-            UserOwner.Add(CurrentUser);
+            UserOwner = CurrentUser;
             CurrentUser.Money -= Cost;
+            StartCoroutine(PurchaseCompleted());
             UpdateInfo();
         }
+        else
+        {
+            StartCoroutine(PurchaseFailed());
+        }
+    }
+
+    public void btnInfo()
+    {
+        LeftPanelToggle();
+    }
+
+    public void btnBid()
+    {
+        RigthPanelToggle();
+    }
+
+    public void btnSell()
+    {
+        SellMenuToggle();
+    }
+
+    public void btnSellPanel()
+    {
+        SellMenuToggle();
+    }
+
+    private IEnumerator PurchaseFailed()
+    {
+        PurchaseFailedPanel.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        PurchaseFailedPanel.SetActive(false);
+    }
+
+    private IEnumerator PurchaseCompleted()
+    {
+        PurchaseCompletedPanel.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        PurchaseCompletedPanel.SetActive(false);
     }
 
     private void bntIsOnOff()
