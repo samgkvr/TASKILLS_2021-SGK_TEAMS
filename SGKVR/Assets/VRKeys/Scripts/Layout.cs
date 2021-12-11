@@ -19,7 +19,7 @@ namespace VRKeys {
 	/// class too.
 	/// </summary>
 	public class Layout {
-		public string placeholderMessage = "Tap the keys to begin typing";
+		public string placeholderMessage = "Коснитесь клавиш, чтобы начать ввод";
 
 		public string spaceButtonLabel = "SPACE";
 

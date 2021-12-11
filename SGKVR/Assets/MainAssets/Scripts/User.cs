@@ -11,6 +11,7 @@ public class User : MonoBehaviour
     public List<Token> OwnedToken;
     public List<Token> CreatedToken;
     public float Money;
+    public bool Registred;
 
     public bool ValidPassword(string m_password)
     {
