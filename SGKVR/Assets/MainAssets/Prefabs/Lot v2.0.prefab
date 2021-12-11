@@ -1907,6 +1907,7 @@ MonoBehaviour:
   OwnedToken: []
   CreatedToken: []
   Money: 0
+  Registred: 0
 --- !u!1 &4010870624111524262
 GameObject:
   m_ObjectHideFlags: 0
@@ -3008,6 +3009,7 @@ MonoBehaviour:
   OwnedToken: []
   CreatedToken: []
   Money: 0
+  Registred: 0
 --- !u!1 &4143867607873970788
 GameObject:
   m_ObjectHideFlags: 0
