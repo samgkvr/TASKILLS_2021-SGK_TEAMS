@@ -6,6 +6,6 @@ public class GameManager : MonoBehaviour
     public User CurrentUser;
     private void Awake()
     {
-        CurrentUser = LocalPlayer.GetComponent<User>();
+        //CurrentUser = LocalPlayer.GetComponent<User>();
     }
 }

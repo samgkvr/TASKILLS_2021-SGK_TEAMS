@@ -51,7 +51,6 @@ public class Token : MonoBehaviour
     private GameObject SellMenu;
 
     private GameManager m_GameManager;
-
     private User CurrentUser;
 
     private void Awake()
