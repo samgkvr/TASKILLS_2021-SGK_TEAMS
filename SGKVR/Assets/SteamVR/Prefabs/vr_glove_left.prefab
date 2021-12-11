@@ -2335,7 +2335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 1573845054891686206}
-  oneBtn: {fileID: 0}
+  oneBtn: {fileID: 2146155783654241222}
   textNickname: {fileID: 3408191429940141717}
   textMoney: {fileID: 6796357719020539763}
   textOwnedToken: {fileID: 5431348782741700448}

@@ -292,9 +292,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 0
   Nickname: 
+  Email: 
+  Password: 
   Description: 
-  IDOwnedToken: 
-  IDCreatedToken: 
+  OwnedToken: []
+  CreatedToken: []
+  Money: 0
+  Registred: 0
 --- !u!1 &109154
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,9 +973,9 @@ MonoBehaviour:
   renderModels: []
   mainRenderModel: {fileID: 0}
   hoverhighlightRenderModel: {fileID: 0}
-  showDebugText: 1
-  spewDebugText: 1
-  showDebugInteractables: 1
+  showDebugText: 0
+  spewDebugText: 0
+  showDebugInteractables: 0
 --- !u!114 &114000011273627542
 MonoBehaviour:
   m_ObjectHideFlags: 0

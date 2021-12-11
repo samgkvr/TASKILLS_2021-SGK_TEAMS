@@ -42,6 +42,7 @@ namespace VRKeys {
         /// but you can also use the inspector.
         /// </summary>
         private void OnEnable () {
+			state1 = true;
 			// Automatically creating camera here to show how
 			//GameObject camera = new GameObject ("Main Camera");
 			Camera cam = camera.GetComponent<Camera> ();
@@ -133,7 +134,7 @@ namespace VRKeys {
 		/// Pretend to submit the email before resetting.
 		/// </summary>
 		private IEnumerator SubmitEmail (string email) {
-			state1 = true;
+			state1 = false;
 			keyboard.ShowInfoMessage ("Код подтверждения отправлен на ваш Email... ;)");
 
 			yield return new WaitForSeconds (2f);
