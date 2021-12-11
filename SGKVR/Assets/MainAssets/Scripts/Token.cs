@@ -30,12 +30,21 @@ public class Token : MonoBehaviour
 
     [SerializeField]
     private GameObject buttonBuy;
+    [SerializeField]
+    private GameObject buttonSell;
 
     [SerializeField]
     private GameObject LeftPanel;
 
     [SerializeField]
     private GameObject RightPanel;
+
+    [SerializeField]
+    private GameObject PurchaseFailedPanel;
+    [SerializeField]
+    private GameObject PurchaseCompletedPanel;
+    [SerializeField]
+    private GameObject SellMenu;
 
     private GameManager m_GameManager;
 
