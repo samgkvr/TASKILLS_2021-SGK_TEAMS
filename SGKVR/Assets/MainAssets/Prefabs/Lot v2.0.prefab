@@ -2949,6 +2949,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4144463407171288433}
   - component: {fileID: 477059747223066065}
+  - component: {fileID: 246274966418945426}
+  - component: {fileID: 5050954922968858450}
   m_Layer: 0
   m_Name: Lot v2.0
   m_TagString: Untagged
@@ -3009,6 +3011,40 @@ MonoBehaviour:
   PurchaseFailedPanel: {fileID: 4735043161988470486}
   PurchaseCompletedPanel: {fileID: 6229010892791208117}
   SellMenu: {fileID: 1843883713226626192}
+--- !u!114 &246274966418945426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4132449618397662387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb6f96c2131004740be9630597b869fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
+  Image: {fileID: 0}
+--- !u!114 &5050954922968858450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4132449618397662387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e39568f0c2a2d45bd54a334ff9fd28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
+  Nickname: 
+  Email: 
+  Password: 
+  Description: 
+  OwnedToken: []
+  CreatedToken: []
+  Money: 0
 --- !u!1 &4143867607873970788
 GameObject:
   m_ObjectHideFlags: 0
