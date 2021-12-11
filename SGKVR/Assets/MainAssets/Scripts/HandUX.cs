@@ -52,7 +52,7 @@ public class HandUX : MonoBehaviour
         }
         else
         {
-            textNickname.text = "Вы не зарегистрированы";
+            textNickname.text = "Вы не авторизованы";
             textMoney.text = "";
             textOwnedToken.text = "";
         }

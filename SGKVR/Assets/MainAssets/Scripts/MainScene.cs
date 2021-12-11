@@ -17,6 +17,7 @@ namespace VRKeys {
 
 		public GameObject camera;
 
+		[SerializeField]
 		private bool state1, state2, state3;
 
 		/// <summary>
@@ -29,20 +30,54 @@ namespace VRKeys {
 		private GameManager m_GameManager;
 		private User CurrentUser;
 
+		[SerializeField]
+		private GameObject RegPanel;
+
 		private void Awake()
         {
 			GameObject GameManager = GameObject.Find("GameManager");
 			m_GameManager = GameManager.GetComponent<GameManager>();
 			CurrentUser = m_GameManager.CurrentUser;
+			RegPanel.SetActive(true);
+			state1 = true;
+		}
+
+		public void btnRegCancel()
+        {
+			RegPanel.SetActive(false);
+		}
+
+		public void btnRegOn()
+		{
+			RegPanel.SetActive(false);
+			state1 = true;
+			keyboard.Enable();
+
+			if (state1)
+			{
+				keyboard.SetPlaceholderMessage("Пожалуйста, введите ваш Email");
+			}
+			if (state2)
+			{
+				keyboard.SetPlaceholderMessage("Пожалуйста, введите никнейм");
+			}
+			if (state3)
+			{
+				keyboard.SetPlaceholderMessage("Пожалуйста, введите пароль");
+			}
+
+			keyboard.OnUpdate.AddListener(HandleUpdate);
+			keyboard.OnSubmit.AddListener(HandleSubmit);
+			keyboard.OnCancel.AddListener(HandleCancel);
 		}
 
 
-        /// <summary>
-        /// Show the keyboard with a custom input message. Attaching events dynamically,
-        /// but you can also use the inspector.
-        /// </summary>
-        private void OnEnable () {
-			state1 = true;
+		/// <summary>
+		/// Show the keyboard with a custom input message. Attaching events dynamically,
+		/// but you can also use the inspector.
+		/// </summary>
+		private void OnEnable () {
+
 			// Automatically creating camera here to show how
 			//GameObject camera = new GameObject ("Main Camera");
 			Camera cam = camera.GetComponent<Camera> ();
@@ -52,17 +87,6 @@ namespace VRKeys {
 			// Improves event system performance
 			Canvas canvas = keyboard.canvas.GetComponent<Canvas> ();
 			canvas.worldCamera = cam;
-
-			keyboard.Enable ();
-
-			if (state1)
-            {
-				keyboard.SetPlaceholderMessage("Пожалуйста, введите ваш Email");
-			}
-
-			keyboard.OnUpdate.AddListener (HandleUpdate);
-			keyboard.OnSubmit.AddListener (HandleSubmit);
-			keyboard.OnCancel.AddListener (HandleCancel);
 		}
 
 		private void OnDisable () {
@@ -123,6 +147,19 @@ namespace VRKeys {
 				}
 
 				StartCoroutine(SubmitEmail(text));
+				state1 = false;
+			}
+			if (state2)
+			{
+				StartCoroutine(SubmitNick(text));
+				keyboard.SetPlaceholderMessage("Пожалуйста, введите никнейм");
+				state2 = false;
+			}
+			if (state3)
+			{
+				StartCoroutine(SubmitPass(text));
+				keyboard.SetPlaceholderMessage("Пожалуйста, введите пароль");
+				state3 = false;
 			}
 		}
 
@@ -148,6 +185,46 @@ namespace VRKeys {
 			keyboard.HideSuccessMessage ();
 			keyboard.SetText ("");
 			keyboard.EnableInput ();
+
+			state2 = true;
+		}
+
+		private IEnumerator SubmitNick(string nick)
+		{
+			state2 = false;
+			keyboard.ShowSuccessMessage("Никнейм установлен");
+
+			CurrentUser.Nickname = nick;
+
+			yield return new WaitForSeconds(2f);
+
+			keyboard.HideSuccessMessage();
+			keyboard.SetText("");
+			keyboard.EnableInput();
+
+			state3 = true;
+		}
+
+		private IEnumerator SubmitPass(string pass)
+		{
+			state3 = false;
+			keyboard.ShowSuccessMessage("Пароль сохранен");
+
+			CurrentUser.Password = pass;
+
+			yield return new WaitForSeconds(2f);
+
+			keyboard.HideSuccessMessage();
+			keyboard.SetText("");
+			keyboard.EnableInput();
+
+			keyboard.OnUpdate.RemoveListener(HandleUpdate);
+			keyboard.OnSubmit.RemoveListener(HandleSubmit);
+			keyboard.OnCancel.RemoveListener(HandleCancel);
+
+			keyboard.Disable();
+
+			HandleCancel();
 		}
 
 		private bool ValidateEmail (string text) {

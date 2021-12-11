@@ -152,17 +152,24 @@ public class Token : MonoBehaviour
 
     public void bntBuy()
     {
-        if (Cost <= CurrentUser.Money && CurrentUser != UserOwner)
+        if (CurrentUser.Nickname == "" || CurrentUser.Nickname == null)
         {
-            CurrentUser.OwnedToken.Add(this);
-            UserOwner = CurrentUser;
-            CurrentUser.Money -= Cost;
-            StartCoroutine(PurchaseCompleted());
-            UpdateInfo();
+            StartCoroutine(PurchaseFailed());
         }
         else
         {
-            StartCoroutine(PurchaseFailed());
+            if (Cost <= CurrentUser.Money && CurrentUser != UserOwner)
+            {
+                CurrentUser.OwnedToken.Add(this);
+                UserOwner = CurrentUser;
+                CurrentUser.Money -= Cost;
+                StartCoroutine(PurchaseCompleted());
+                UpdateInfo();
+            }
+            else
+            {
+                StartCoroutine(PurchaseFailed());
+            }
         }
     }
 
@@ -173,12 +180,27 @@ public class Token : MonoBehaviour
 
     public void btnBid()
     {
-        RigthPanelToggle();
+        if (CurrentUser.Nickname == "" || CurrentUser.Nickname == null)
+        {
+            StartCoroutine(PurchaseFailed());
+        }
+        else
+        {
+            RigthPanelToggle();
+        }
     }
 
     public void btnSell()
     {
         SellMenuToggle();
+    }
+
+    public void btnSell10()
+    {
+        SellMenuToggle();
+        CurrentUser.Money -= 20;
+        Cost = 20;
+        UpdateInfo();
     }
 
     public void btnSellPanel()
